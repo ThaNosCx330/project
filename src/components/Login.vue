@@ -9,16 +9,22 @@
 
       <!-- 登录表单 -->
       <div class="login_form">
-        <el-form label-width="0px">
+        <el-form :model= "formData" :rules= "rules">
 
           <!-- 用户名 -->
-          <el-form-item>
-            <el-input></el-input>
+          <el-form-item prop="username">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-yonghuming"></use>
+              </svg>
+            <el-input v-model= "formData.username"></el-input>
           </el-form-item>
 
           <!-- 密码 -->
-          <el-form-item>
-            <el-input></el-input>
+          <el-form-item prop="password">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-mima"></use>
+              </svg>
+            <el-input v-model= "formData.password" type="password"></el-input>
           </el-form-item>
 
           <!-- 按钮区域 -->
@@ -34,11 +40,29 @@
 
 <script>
 export default {
+  data () {
+    return {
+      formData: {
+        username: 'admin',
+        password: '123456'
+      },
 
+      rules: {
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
+        ]
+      }
+    }
+  }
 }
 </script>
 
-<style lang="less" scope="this api replaced by slot-scope in 2.5.0+">
+<style lang="less" scope>
   .login_container {
     display: flex;
     align-items: center;
@@ -81,6 +105,12 @@ export default {
           bottom: 0;
           width: 100%;
           box-sizing: border-box;
+
+          .el-input {
+            input {
+              padding: 0 30px;
+            }
+          }
         }
 
       }
@@ -90,5 +120,17 @@ export default {
         justify-content: flex-end;
       }
     }
+
   }
+
+      .icon {
+        position: absolute;
+        top: 5px;
+        width: 2em;
+        height: 2em;
+        fill: currentColor;
+        overflow: hidden;
+        z-index: 100;
+    }
+
 </style>
