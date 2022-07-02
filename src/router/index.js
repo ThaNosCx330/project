@@ -1,14 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+// 引入全局的css样式
+import '../assets/css/global.css'
+
 // 引入登录的组件
 import Login from '../components/Login'
 
 // 引入home主页的组件
 import Home from '../components/Home'
 
-// 引入全局的css样式
-import '../assets/css/global.css'
+// 引入home页面的welcome主页
+import Welcome from '../components/Welcome'
 
 Vue.use(VueRouter)
 
@@ -29,7 +32,16 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
+
+    redirect: '/welcome',
+    children: [
+      {
+        path: '/welcome',
+        name: 'welcome',
+        component: Welcome
+      }
+    ]
   }
   // {
   //   path: '/about',

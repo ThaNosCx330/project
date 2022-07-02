@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1656596155053') format('truetype');
+  src: url('iconfont.ttf?t=1656760406911') format('truetype');
 }
 
 .iconfont {
@@ -11,11 +11,67 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-dingdanguanli:before {
+  content: "\e62d";
+}
+
+.icon-quanxian:before {
+  content: "\e663";
+}
+
+.icon-fenlei:before {
+  content: "\e636";
+}
+
+.icon-quanxianguanli:before {
+  content: "\e602";
+}
+
+.icon-shangpinguanli:before {
+  content: "\e6b0";
+}
+
+.icon-ico-:before {
+  content: "\e817";
+}
+
 .icon-yonghuming:before {
   content: "\e61f";
 }
 
+.icon-shujubaobiao:before {
+  content: "\e667";
+}
+
+.icon-yonghu:before {
+  content: "\e6a1";
+}
+
 .icon-mima:before {
   content: "\e86c";
+}
+
+.icon-yonghuquanxianguanli:before {
+  content: "\e689";
+}
+
+.icon-shujutongji:before {
+  content: "\e60e";
+}
+
+.icon-dingdan-:before {
+  content: "\e608";
+}
+
+.icon-ebr_quanxianguanli:before {
+  content: "\e619";
+}
+
+.icon-shangpinfenlei24:before {
+  content: "\e61a";
+}
+
+.icon-shangpinliebiao:before {
+  content: "\e615";
 }
 
